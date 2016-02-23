@@ -10,7 +10,7 @@ Installation
 
 To install gcmd, simply:
 
-.. code-block:: bash
+.. code:: bash
 
     $ make
     $ make install
@@ -27,7 +27,9 @@ Using ``gcmd`` is simple. In your gawk script, you'll need to load ``gcmd``, and
 
 ``GCRS`` provides a replacement string. When getting ready to execute the command against the current file, the value of ``GCRS`` is replaced with the current ``FILENAME``. If the value of ``GCRS`` is not in ``GCMD``, then ``FILENAME`` will be appended to ``GCMD``.
 
-A simple example::
+A simple example:
+
+.. code:: awk
 
     #!/usr/bin/gawk -f
     @load "gcmd"
@@ -39,7 +41,10 @@ A simple example::
     # write the rest of your gawk script as normal
     ...
 
-It's possible to change commands between files by specifying a new value for ``GCMD`` within the ``BEGINFILE`` block::
+It's possible to change commands between files by specifying a new value for ``GCMD`` within the ``BEGINFILE`` block:
+
+
+.. code:: awk
 
     #!/usr/bin/gawk -f
     @load "gcmd"
@@ -59,12 +64,14 @@ It's possible to change commands between files by specifying a new value for ``G
     }
     ...
 
-If you have a more complex commandline, making use of GCRS can be helpful::
+If you have a more complex commandline, making use of GCRS can be helpful:
+
+.. code:: awk
 
     #!/usr/bin/gawk -f
     @load "gcmd"
     BEGIN {
-        # GCRS = "{}" by default, 
+        # GCRS = "{}" by default,
         # so the resulting commandline will be "make -Bnp : -f <FILENAME> 2>/dev/null"
         GCMD = "make -Bnp : -f {} 2>/dev/null"
     }
