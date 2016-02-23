@@ -177,7 +177,6 @@ static awk_bool_t gcmd_take_control_of(awk_input_buf_t *iobuf) {
     if ((_tmp = realloc(_cmdline, cllen)) != NULL) {
         _cmdline = _tmp;
     }
-    warning(ext_id, "_cmdline: '%s'\n", _cmdline);
 
     state->cmdline = _cmdline;
 
