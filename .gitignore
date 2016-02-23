@@ -1,0 +1,6 @@
+.idea
+# CLion uses cmake, but I wrote my own Makefile
+CMakeLists.txt
+
+*.o
+*.so
